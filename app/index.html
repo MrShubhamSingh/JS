@@ -13,12 +13,16 @@
 <body>
     <div class="header" id="header">
         <h1>Add your task</h1>
-        <input type="text" class="titleInput" placeholder="Enter your title here" id="title">
+        <input type="text" class="titleInput" placeholder="Enter your title here" id="title" onkeypress="handleKeyPress(event)">
         <input type="button" class="addNoteBtn" value="Add" onclick="addList()">
     </div>
     <ul id="list">
-        <li>Some title <span class="delete" onclick="deleteHandler()" style="float: right;">X</span></li>
     </ul>
+    <div class="deleteAllContainer">
+        <input onclick="deleteAll()" type="button" value="Delete all">
+    </div>
 </body>
 
 </html>
+
+<!-- <span class="delete" onclick="deleteHandler()" style="float: right;">X</span> -->
