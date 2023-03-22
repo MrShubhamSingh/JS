@@ -1,30 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
-    <script defer src="./index.js" ></script>
-    <title>App</title>
+    <script defer src="./index.js"></script>
+    <title>Todo App</title>
 </head>
-<body id="body">
-    <div>
-       <button>Button for Edureify</button>
-       <h1>DOM</h1>
-       <h2>Active Element</h2>
-       <div style="height: 20px; background-color:rgb(73, 73, 46); padding: 10px;">
-           Hi everyone
-           <!-- innerHtml -->
-       </div>
-       <button id="content" onclick="pressSwitch()">
-           Switch On
-       </button>
-       <div id="bulb">
-           <img width="100" height="100" src="https://www.pngfind.com/pngs/m/80-805591_light-bulb-icon-png-transparent-png.png">
-       </div>
 
+<body>
+    <div class="header" id="header">
+        <h1>Add your task</h1>
+        <input type="text" class="titleInput" placeholder="Enter your title here" id="title">
+        <input type="button" class="addNoteBtn" value="Add" onclick="addList()">
     </div>
+    <ul id="list">
+        <li>Some title <span class="delete" onclick="deleteHandler()" style="float: right;">X</span></li>
+    </ul>
 </body>
-</html>
 
+</html>
