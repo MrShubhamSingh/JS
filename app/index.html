@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
-    <script defer src="./injex.js" ></script>
-    <title>App</title>
+    <script defer src="./index.js"></script>
+    <title>Todo App</title>
 </head>
-<body>
-    <p>This is a paragragh</p>
-<h1> this is heading</h1>
-<h6>ROhit</h6>
-  <div>hello</div>
- <h1>hyy</h1>
+
+<body onload="onPageLoad()">
+    <div class="header" id="header">
+        <h1>Add your task</h1>
+        <input type="text" class="titleInput" placeholder="Enter your title here" id="title" onkeypress="handleKeyPress(event)">
+        <input type="button" class="addNoteBtn" value="Add" onclick="addList()">
+    </div>
+    <ul id="list">
+    </ul>
+    <div class="deleteAllContainer">
+        <input onclick="deleteAll()" type="button" value="Delete all">
+    </div>
 </body>
+
 </html>
+
+
+
+<!-- <span class="delete" onclick="deleteHandler()" style="float: right;">X</span> -->

@@ -1,0 +1,101 @@
+body{
+    margin:0;
+    padding:0;
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    width: 100vw;
+    background-color: rgb(233, 56, 121);
+    display: block;
+    text-align: center;
+    color: rgb(255, 252, 252);
+}
+h1{
+    margin: 0;
+}
+
+.titleInput{
+    margin-top: 5px;
+    padding: 10px;
+    width: 70vw;
+    height: 2.5vh;
+    font-size: 16px;
+    box-shadow: none;
+    border:none;
+}
+
+.addNoteBtn{
+    margin-top: 5px;
+    padding: 1.3vh;
+    font-size: 16px;
+    box-shadow: none;
+    border:none;
+    transition: 0.2s;
+    color: rgb(122, 127, 131);
+    cursor: pointer;
+}
+
+.addNoteBtn:hover{
+    background-color: rgb(17, 210, 210);
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+ul li{
+    display: flex;
+    padding: 2vh;
+    list-style-type: none;
+    background-color: rgb(177, 227, 248);
+    transition: 0.2s;
+    cursor: pointer;
+    font-size: 20px;
+    align-items: center;
+}
+
+
+ul li:nth-child(odd){
+    background-color: rgb(129, 195, 224);
+}
+
+ul li:hover{
+    background-color: rgb(185, 206, 215);
+}
+
+ul li.selected{
+    background-color: rgb(253, 116, 116);
+    border-bottom: 1px solid rgb(241, 147, 147);
+}
+
+.delete{
+    margin-left: auto;
+    transform: rotate(45deg);
+    text-align: center;
+    font-size: 30px;
+}
+
+.deleteAllContainer{
+    display: flex;
+    height: 10vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    display: none;
+}
+
+.deleteAllContainer>input{
+    cursor: pointer;
+    height: 8vh;
+    width: 15vw;
+    background-color: rgb(255, 127, 127);
+    border: none;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+}
