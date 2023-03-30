@@ -49,13 +49,16 @@ ul{
 }
 
 ul li{
+    display: flex;
     padding: 2vh;
     list-style-type: none;
     background-color: rgb(177, 227, 248);
     transition: 0.2s;
     cursor: pointer;
     font-size: 20px;
+    align-items: center;
 }
+
 
 ul li:nth-child(odd){
     background-color: rgb(129, 195, 224);
@@ -63,4 +66,37 @@ ul li:nth-child(odd){
 
 ul li:hover{
     background-color: rgb(185, 206, 215);
+}
+
+ul li.selected{
+    background-color: rgb(253, 116, 116);
+    border-bottom: 1px solid rgb(241, 147, 147);
+}
+
+.delete{
+    margin-left: auto;
+    transform: rotate(45deg);
+    text-align: center;
+    font-size: 30px;
+}
+
+.deleteAllContainer{
+    display: flex;
+    height: 10vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    display: none;
+}
+
+.deleteAllContainer>input{
+    cursor: pointer;
+    height: 8vh;
+    width: 15vw;
+    background-color: rgb(255, 127, 127);
+    border: none;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
 }
