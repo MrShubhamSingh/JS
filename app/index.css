@@ -99,3 +99,31 @@ ul li.selected{
     color: rgb(255, 255, 255);
     border-radius: 4px;
 }
+
+.editBtn{
+    margin: 0px 10px 0px 10px;
+    align-self: center;
+    text-align: center;
+    background-color: rgb(62, 124, 185);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.editBtn:hover{
+    transform: scale(1.1);
+    background-color: dodgerblue;
+}
+
+.editInput{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: 20px;
+}
+
+.editInput:focus{
+    outline: none;
+}

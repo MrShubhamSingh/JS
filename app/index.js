@@ -34,6 +34,13 @@ function addList(titleOnLoad) {
 
     listItem.appendChild(closeElement);
 
+    //Adding delete button
+    let button =  document.createElement('button');
+    button.value = 'Edit'
+    button.className = 'editBtn';
+    button.addEventListener('click', editHandler);
+    button.innerText = "Edit";
+    listItem.appendChild(button);
     //Attaching click handler for list
     listItem.addEventListener('click', listClickHandler);
 
@@ -48,25 +55,26 @@ function addList(titleOnLoad) {
 
 function listClickHandler(event) {
   let list = event.target;
-  console.dir(list)
-  if (list.className === 'selected') {
-    list.className = '';
-  } else {
-    list.className = 'selected';
-  }
-  showDeleteAll();
+    if (list.className === 'selected') {
+      list.className = '';
+    } else {
+      list.className = 'selected';
+    }
+    showDeleteAll();
 }
 
 function removeAllCloseButton() {
   const list = document.getElementsByTagName('li');
   for (let i = 0; i < list.length; i++) {
     list[i].firstElementChild.style.display = 'none';
+    list[i].firstElementChild.nextSibling.style.display = 'none';
   }
 }
 function showAllCloseButton() {
   const list = document.getElementsByTagName('li');
   for (let i = 0; i < list.length; i++) {
     list[i].firstElementChild.style.display = '';
+    list[i].firstElementChild.nextSibling.style.display = '';
   }
 }
 
@@ -112,4 +120,39 @@ function deleteAll() {
   })
   localStorage.setItem("titleData", JSON.stringify(filteredArray))
   showDeleteAll();
+}
+
+function editHandler(event){
+  event.stopPropagation();
+  const {target} = event;
+  target.innerText = 'Save';
+  target.removeEventListener('click', editHandler);
+  target.addEventListener('click', saveHandler)
+  const parentElement = target.parentElement;
+  const textElement = parentElement.firstChild;
+
+  const inputElement = document.createElement('input');
+  inputElement.className='editInput';
+  inputElement.value=textElement.data;
+  inputElement.addEventListener('click', changeTextOnEdit)
+
+  parentElement.replaceChild(inputElement, textElement)
+
+  removeClickEventFromAllLists();
+
+}
+
+function changeTextOnEdit(event){
+  event.stopPropagation();
+}
+
+function removeClickEventFromAllLists(){
+  const list = document.getElementsByTagName('li');
+  for (let i = 0; i < list.length; i++) {
+   list[i].removeEventListener('click', listClickHandler);
+  }
+};
+
+function saveHandler(event){
+ event.stopPropagation();
 }
